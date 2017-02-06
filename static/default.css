@@ -2,6 +2,8 @@
 	font-family: serif;
 }
 
+html,body { height:100%; }
+
 @keyframes type {
   from { width: 0; } 
 } 
@@ -17,3 +19,19 @@
 .typing {
   animation: type 4s steps(30, end)
 }
+
+#tagList a {
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+div.board{
+	position: relative;
+}
+
+div.cube{
+	position: absolute;
+	background: AliceBlue;
+}
+
+

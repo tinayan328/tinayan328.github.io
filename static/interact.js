@@ -3,7 +3,7 @@
 /************************************************
 	Don't read my js file, I'm trying to make the website a little bit interesting, 
 	but you may find clues in js file ( I hope the browser can secure the js file :\). 
-	Or maybe I should try to use react.
+	Or maybe I need a back end.
 ************************************************/
 -->
 (function() {
@@ -50,13 +50,13 @@
 			index = 0;
 			round++;
 		}
-		if(group == 0 && round == 4) {
-			group = 1;
-			round = 0;
-		} else if (group == 1 && round == 1) {
-			group = 0;
-			round = 0;
-		}
+//		if(group == 0 && round == 4) {
+//			group = 1;
+//			round = 0;
+//		} else if (group == 1 && round == 1) {
+//			group = 0;
+//			round = 0;
+//		}
 
 		decision = messagePool[group][index] === "Do you still want to see it?";
 	}

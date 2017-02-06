@@ -3,13 +3,38 @@
 	<head>
 		<title>Hello World</title>
     	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    	<link rel="stylesheet" type="text/css" href="default.css">
+    	<link rel="stylesheet" type="text/css" href="static/default.css">
     	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     	<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<center><h1>Yihui Yan (Tina)</h1></center>
-		<center><p id='welcomeMessage'></p></center>
+			<div class="col-md-3" style="background: DeepSkyBlue; height: 100%">
+				<div class = "board" style="margin-top: 20px"></div>
+			</div>
+			<div class="col-md-9">
+				<center>
+					<h1>Yihui Yan (Tina)</h1>
+					<p id='welcomeMessage'></p>
+				</center>
+				<hr width="50%" style="width: 70%">
+				<div id="tagList">
+				<center>
+					<a href="https://github.com/tinayan328">Github</a>
+					<a href="https://ca.linkedin.com/in/yihui-tina-yan-a86170107">Linkedin</a>
+					<a href="project.html">Project</a>
+					<a href="resume.html">Resume</a>
+					<!--a href="forfun.html">ForFun</a-->
+				</center>
+				</div>
+			</div>
 	</body>
-    <script type="text/javascript" src=interact.js></script>
+    <script type="text/javascript" src=static/interact.js></script>
+    <script type="text/javascript" src="static/nav_game/board.js"></script>
+    <script type="text/javascript" src="static/nav_game/tetris.js"></script>
+    <script type="text/javascript" src="static/nav_game/controller.js"></script>
+    <script>
+      $(document).ready(function(){
+        setUp();
+      });
+    </script>
 </html>
