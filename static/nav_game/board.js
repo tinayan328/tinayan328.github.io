@@ -7,23 +7,22 @@ function Board(cRow, cColumn) {
 
 	var boardRecd = [];
 
-	function initializeBoard() {
-		var board = $(".board");
-		board.css("width", width + "px")
-				 .css("height", height + "px")
+	var board = $(".board");
+	board.empty();
+	board.css("width", width + "px")
+			 .css("height", height + "px")
 
-		for(var i = 0; i < cRow; ++i) {
-			boardRecd[i] = [];
-			for(var j = 0; j < cColumn; ++j) {
-				var cube = $('<div class="cube"></div>')
-								.css("width", cubeSize + "px")
-								.css("height", cubeSize + "px")
-								.offset({top: i * (cubeSize + marginSize) + marginSize,
-												 left: j * (cubeSize + marginSize) + marginSize})
-								.hide();
-				board.append(cube);
-				boardRecd[i][j] = cube;
-			}
+	for(var i = 0; i < cRow; ++i) {
+		boardRecd[i] = [];
+		for(var j = 0; j < cColumn; ++j) {
+			var cube = $('<div class="cube"></div>')
+							.css("width", cubeSize + "px")
+							.css("height", cubeSize + "px")
+							.offset({top: i * (cubeSize + marginSize) + marginSize,
+											 left: j * (cubeSize + marginSize) + marginSize})
+							.hide();
+			board.append(cube);
+			boardRecd[i][j] = cube;
 		}
 	}
 
@@ -125,7 +124,6 @@ function Board(cRow, cColumn) {
 	}
 
 	return {
-		initializeBoard: initializeBoard,
 		renderBoard: renderBoard,
 		gameOver: gameOver,
 		show: show,

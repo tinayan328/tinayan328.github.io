@@ -1,7 +1,5 @@
-function TetrisController() {
+function TetrisController(cRow, cColumn) {
 
-	var cRow = 25;
-	var cColumn = 12;
 	var map = [];
 	var board = new Board(cRow, cColumn);
 
@@ -64,16 +62,13 @@ function TetrisController() {
 		LLShape, SLShape, LRShape, SRShape, LineShape, SquareShape, TShape
 	]
 
-	function initializeMap() {
-		for(var i = 0; i < cRow; ++i) {
-			map[i] = [];
-			for(var j = 0; j < cColumn; ++j) {
-				map[i][j] = false;
-			}
+	for(var i = 0; i < cRow; ++i) {
+		map[i] = [];
+		for(var j = 0; j < cColumn; ++j) {
+			map[i][j] = false;
 		}
-		board.initializeBoard();
-		nextObj();
 	}
+	nextObj();
 
 	function leftPress() {
 		var nextOrigin = [curOrigin[0], curOrigin[1] - 1];
@@ -150,7 +145,7 @@ function TetrisController() {
 	}
 
 	function nextObj() {
-		curOrigin = [0, cColumn / 2]
+		curOrigin = [0, Math.floor(cColumn / 2)]
 		var iShape = Math.floor(Math.random() * ListShape.length);
 		curObj[0] = iShape;
 		var iRotation = Math.floor(Math.random() * ListShape[iShape].length)
@@ -210,12 +205,17 @@ function TetrisController() {
 		}
 	}
 
+	function spacePress() {
+		if(lose)
+			Controller = new MainController();
+	}
+
 	return {
 		leftPress: leftPress,
 		rightPress: rightPress,
 		upPress: upPress,
 		downPress: downPress,
-		initializeMap: initializeMap,
+		spacePress: spacePress,
 		nextFrame: nextFrame
 	}
 }
